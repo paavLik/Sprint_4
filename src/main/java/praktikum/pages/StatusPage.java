@@ -27,7 +27,6 @@ public class StatusPage {
 
         assertTrue("Изображение 'Заказ не найден' должно отображаться",
                 driver.findElement(orderNotFound).isDisplayed());
-
         return this;
     }
 }
