@@ -53,7 +53,6 @@ public class FaqTest {
         FaqPage faq = new FaqPage(driver);
         faq.scrollToHomeFaq();
         faq.clickOnHeading(id);
-        faq.getTextAnswer(id);
         String actualAnswer = faq.getTextAnswer(id);
         assertEquals("Ответ на " + id + "-й вопрос не соответствует ожидаемому",
                 answer, actualAnswer);
