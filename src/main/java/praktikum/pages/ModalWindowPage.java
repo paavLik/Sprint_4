@@ -8,6 +8,8 @@ import praktikum.EnvConfig;
 
 import java.time.Duration;
 
+import static org.junit.Assert.assertTrue;
+
 public class ModalWindowPage {
 
     private final WebDriver driver;
@@ -34,7 +36,9 @@ public class ModalWindowPage {
     public ModalWindowPage checkRegisteredOrderSuccessfully() {
         new WebDriverWait(driver, Duration.ofSeconds(EnvConfig.DEFAULT_TIMEOUT))
                 .until(ExpectedConditions.visibilityOfElementLocated(modalOrderRegisterWindow));
-        assert driver.findElement(modalOrderRegisterWindow).isDisplayed();
+
+        assertTrue("Модальное окно для зарегистрированного заказа не отображается",
+                driver.findElement(modalOrderRegisterWindow).isDisplayed());
         return this;
     }
 }
